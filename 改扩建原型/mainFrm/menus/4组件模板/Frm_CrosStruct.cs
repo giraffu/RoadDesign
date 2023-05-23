@@ -25,23 +25,83 @@ namespace RoadExpensionDesign.mainFrm.menus
 
 
         #region 构件信息
+
+        /// <summary>
+        /// 初始化界面
+        /// </summary>
         private void initTemp()
         {
             cb_MaterialID.SelectedIndex = 0;
             cb_place.SelectedIndex = 0;
             cb_type.SelectedIndex = 0;
+            this.height.Visible = true;
+            this.width.Visible = true;
+            this.slope.Visible = false;
+            this.cb_Milling.Visible = false;
+            this.cb_Milling.Checked = true;
+            this.cb_Height.Checked = true;
+            this.cb_Height.Visible = false;
+
         }
 
+        /// <summary>
+        /// 选择不同的横向构件触发的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cb_type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (cb_type.SelectedIndex)
+            if (cb_type.SelectedIndex == 3)
             {
-                case 0:
+                this.cb_Milling.Visible = true;
+                this.dgv_component.Visible = false;
+                this.label7.Visible= false;
+                cb_place.Visible = false;
+                pn_show.Visible = false;
+                this.cb_MaterialID.Visible= false;
+                setVisible();
+                cb_MillingChange();
+                cb_HeightChange();
 
-                    break;
-
-                default:
-                    break;
+            }
+            else if (cb_type.SelectedIndex == 2)
+            {
+                this.cb_Milling.Visible = false;
+                this.dgv_component.Visible = true;
+                this.cb_MaterialID.Visible = true;
+                this.label3.Visible = true;
+                this.label7.Visible = true;
+                nud_step.Visible = true;
+                cb_place.Visible = true;
+                pn_show.Visible = true;
+                this.cb_Height.Visible = false;
+                setVisible();
+            }
+            else if(cb_type.SelectedIndex == 1)
+            {
+                this.cb_Milling.Visible = false;
+                this.dgv_component.Visible = true;
+                this.label7.Visible = false;
+                this.cb_MaterialID.Visible = false;
+                this.label3.Visible = true;
+                nud_step.Visible = true;
+                cb_place.Visible = true;
+                pn_show.Visible = true;
+                this.cb_Height.Visible = false;
+                setVisible();
+            }
+            else
+            {
+                this.cb_Milling.Visible = false;
+                this.dgv_component.Visible = true;
+                this.cb_MaterialID.Visible = true;
+                this.label3.Visible = true;
+                this.label7.Visible = true;
+                nud_step.Visible = true;
+                cb_place.Visible = true;
+                pn_show.Visible = true;
+                this.cb_Height.Visible = false;
+                setVisible();
             }
         }
 
@@ -58,39 +118,37 @@ namespace RoadExpensionDesign.mainFrm.menus
                 }
                 
             }
-
         }
-
+        /// <summary>
+        /// 设置表格的列是否可见
+        /// </summary>
         private void setVisible()
         {
             if (chb_Grading.Checked && !chb_BingRoad.Checked)
             {
-                this.参数名称.Visible = true;
-                this.Column1.Visible = true;
-                this.Column2.Visible = true;
+                this.height.Visible = true;
+                this.width.Visible = true;
+                this.slope.Visible = true;
             }
             else if (chb_Grading.Checked && chb_BingRoad.Checked)
             {
-                this.参数名称.Visible = false;
-                this.Column1.Visible = true;
-                this.Column2.Visible = true;
+                this.height.Visible = false;
+                this.width.Visible = true;
+                this.slope.Visible = true;
             }
             else if (!chb_Grading.Checked && chb_BingRoad.Checked)
             {
-                this.参数名称.Visible = true;
-                this.Column1.Visible = true;
-                this.Column2.Visible = false;
+                this.height.Visible = false;
+                this.width.Visible = true;
+                this.slope.Visible = false;
             }
             else
             {
-                this.参数名称.Visible = false;
-                this.Column1.Visible = true;
-                this.Column2.Visible = true;
+                this.height.Visible = true;
+                this.width.Visible = true;
+                this.slope.Visible = false;
             }
         }
-
-        #endregion
-
         private void chb_BingRoad_CheckStateChanged(object sender, EventArgs e)
         {
             setVisible();
@@ -99,6 +157,51 @@ namespace RoadExpensionDesign.mainFrm.menus
         private void chb_Grading_CheckStateChanged(object sender, EventArgs e)
         {
             setVisible();
+        }
+
+        private void cb_Milling_CheckedChanged(object sender, EventArgs e)
+        {
+            cb_MillingChange();
+        }
+
+        private void cb_MillingChange()
+        {
+            this.cb_Height.Visible = cb_Milling.Checked;
+            this.dgv_component.Visible = cb_Milling.Checked;
+        }
+
+        private void cb_Height_CheckedChanged(object sender, EventArgs e)
+        {
+            cb_HeightChange();
+        }
+
+        private void cb_HeightChange()
+        {
+            if (cb_Height.Checked == true)
+            {
+                this.dgv_component.Visible = true;
+                this.height.Visible = true;
+                this.width.Visible = false;
+                this.slope.Visible = false;
+                this.nud_step.Visible = true;
+                this.label3.Visible = true;
+            }
+            else 
+            { 
+                this.dgv_component.Visible = false;
+                this.nud_step.Visible = false;
+                this.label3.Visible = false;
+            }
+        }
+        #endregion
+        private void btn_OK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

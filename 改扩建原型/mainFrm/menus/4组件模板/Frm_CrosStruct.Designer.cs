@@ -32,6 +32,8 @@ namespace RoadExpensionDesign.mainFrm.menus
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CrosStruct));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cb_Height = new System.Windows.Forms.CheckBox();
+            this.cb_Milling = new System.Windows.Forms.CheckBox();
             this.tb_Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_type = new System.Windows.Forms.ComboBox();
@@ -41,16 +43,15 @@ namespace RoadExpensionDesign.mainFrm.menus
             this.cb_MaterialID = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.chb_Grading = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.cb_place = new System.Windows.Forms.ComboBox();
             this.lb_place = new System.Windows.Forms.Label();
             this.nud_step = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_component = new System.Windows.Forms.DataGridView();
             this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.参数名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.height = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.width = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slope = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pb_component = new System.Windows.Forms.PictureBox();
             this.btn_OK = new System.Windows.Forms.Button();
@@ -65,12 +66,13 @@ namespace RoadExpensionDesign.mainFrm.menus
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cb_Height);
+            this.groupBox3.Controls.Add(this.cb_Milling);
             this.groupBox3.Controls.Add(this.tb_Name);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.cb_type);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.pn_show);
-            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.cb_place);
             this.groupBox3.Controls.Add(this.lb_place);
             this.groupBox3.Controls.Add(this.nud_step);
@@ -80,10 +82,34 @@ namespace RoadExpensionDesign.mainFrm.menus
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(586, 307);
+            this.groupBox3.Size = new System.Drawing.Size(586, 270);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "参数设置";
+            // 
+            // cb_Height
+            // 
+            this.cb_Height.AutoSize = true;
+            this.cb_Height.Location = new System.Drawing.Point(17, 81);
+            this.cb_Height.Margin = new System.Windows.Forms.Padding(2);
+            this.cb_Height.Name = "cb_Height";
+            this.cb_Height.Size = new System.Drawing.Size(144, 16);
+            this.cb_Height.TabIndex = 18;
+            this.cb_Height.Text = "是否指定铣刨台阶高度";
+            this.cb_Height.UseVisualStyleBackColor = true;
+            this.cb_Height.CheckedChanged += new System.EventHandler(this.cb_Height_CheckedChanged);
+            // 
+            // cb_Milling
+            // 
+            this.cb_Milling.AutoSize = true;
+            this.cb_Milling.Location = new System.Drawing.Point(17, 59);
+            this.cb_Milling.Margin = new System.Windows.Forms.Padding(2);
+            this.cb_Milling.Name = "cb_Milling";
+            this.cb_Milling.Size = new System.Drawing.Size(120, 16);
+            this.cb_Milling.TabIndex = 17;
+            this.cb_Milling.Text = "超高时是否做台阶";
+            this.cb_Milling.UseVisualStyleBackColor = true;
+            this.cb_Milling.CheckedChanged += new System.EventHandler(this.cb_Milling_CheckedChanged);
             // 
             // tb_Name
             // 
@@ -191,17 +217,6 @@ namespace RoadExpensionDesign.mainFrm.menus
             this.chb_Grading.UseVisualStyleBackColor = true;
             this.chb_Grading.CheckStateChanged += new System.EventHandler(this.chb_Grading_CheckStateChanged);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 276);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(239, 12);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "*图中为右幅样式，系统会根据左幅自动镜像";
-            this.label5.Visible = false;
-            // 
             // cb_place
             // 
             this.cb_place.BackColor = System.Drawing.SystemColors.Window;
@@ -255,10 +270,10 @@ namespace RoadExpensionDesign.mainFrm.menus
             this.dgv_component.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_component.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.序号,
-            this.参数名称,
-            this.Column1,
-            this.Column2});
-            this.dgv_component.Location = new System.Drawing.Point(4, 80);
+            this.height,
+            this.width,
+            this.slope});
+            this.dgv_component.Location = new System.Drawing.Point(4, 101);
             this.dgv_component.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_component.Name = "dgv_component";
             this.dgv_component.RowHeadersWidth = 51;
@@ -269,29 +284,29 @@ namespace RoadExpensionDesign.mainFrm.menus
             // 序号
             // 
             this.序号.DataPropertyName = "orderID";
-            this.序号.HeaderText = "序号";
+            this.序号.HeaderText = "台阶数";
             this.序号.MinimumWidth = 6;
             this.序号.Name = "序号";
             this.序号.ReadOnly = true;
             this.序号.Width = 80;
             // 
-            // 参数名称
+            // height
             // 
-            this.参数名称.DataPropertyName = "parameterName";
-            this.参数名称.HeaderText = "高度";
-            this.参数名称.MinimumWidth = 6;
-            this.参数名称.Name = "参数名称";
-            this.参数名称.ReadOnly = true;
+            this.height.DataPropertyName = "parameterName";
+            this.height.HeaderText = "高度";
+            this.height.MinimumWidth = 6;
+            this.height.Name = "height";
+            this.height.ReadOnly = true;
             // 
-            // Column1
+            // width
             // 
-            this.Column1.HeaderText = "宽度";
-            this.Column1.Name = "Column1";
+            this.width.HeaderText = "宽度";
+            this.width.Name = "width";
             // 
-            // Column2
+            // slope
             // 
-            this.Column2.HeaderText = "坡度";
-            this.Column2.Name = "Column2";
+            this.slope.HeaderText = "坡度";
+            this.slope.Name = "slope";
             // 
             // groupBox2
             // 
@@ -326,6 +341,7 @@ namespace RoadExpensionDesign.mainFrm.menus
             this.btn_OK.TabIndex = 20;
             this.btn_OK.Text = "确定";
             this.btn_OK.UseVisualStyleBackColor = false;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // btn_Cancel
             // 
@@ -337,6 +353,7 @@ namespace RoadExpensionDesign.mainFrm.menus
             this.btn_Cancel.TabIndex = 19;
             this.btn_Cancel.Text = "取消";
             this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // Frm_CrosStruct
             // 
@@ -372,7 +389,6 @@ namespace RoadExpensionDesign.mainFrm.menus
         private System.Windows.Forms.ComboBox cb_MaterialID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox chb_Grading;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cb_place;
         private System.Windows.Forms.Label lb_place;
         private System.Windows.Forms.NumericUpDown nud_step;
@@ -384,9 +400,10 @@ namespace RoadExpensionDesign.mainFrm.menus
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.CheckBox chb_BingRoad;
         private System.Windows.Forms.DataGridViewTextBoxColumn 序号;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 参数名称;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn height;
+        private System.Windows.Forms.DataGridViewTextBoxColumn width;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slope;
+        private System.Windows.Forms.CheckBox cb_Milling;
+        private System.Windows.Forms.CheckBox cb_Height;
     }
 }

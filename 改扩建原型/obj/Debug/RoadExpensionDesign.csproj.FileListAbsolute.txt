@@ -63,7 +63,6 @@ C:\Users\chuzeyu\Documents\WXWorkLocal\1688849876128742_1970325014019539\Cache\F
 E:\RoadDesign\改扩建原型\bin\Debug\改扩建原型.exe.config
 E:\RoadDesign\改扩建原型\bin\Debug\改扩建原型.exe
 E:\RoadDesign\改扩建原型\bin\Debug\改扩建原型.pdb
-E:\RoadDesign\改扩建原型\obj\Debug\RoadExpensionDesign.csprojAssemblyReference.cache
 E:\RoadDesign\改扩建原型\obj\Debug\RoadExpensionDesign.MainForm.resources
 E:\RoadDesign\改扩建原型\obj\Debug\RoadExpensionDesign.mainFrm.menus.Frm_NewProject.resources
 E:\RoadDesign\改扩建原型\obj\Debug\RoadExpensionDesign.mainFrm.menus.Frm_ProjectInfo.resources
@@ -91,3 +90,5 @@ E:\RoadDesign\改扩建原型\obj\Debug\RoadExpensionDesign.csproj.GenerateResou
 E:\RoadDesign\改扩建原型\obj\Debug\RoadExpensionDesign.csproj.CoreCompileInputs.cache
 E:\RoadDesign\改扩建原型\obj\Debug\改扩建原型.exe
 E:\RoadDesign\改扩建原型\obj\Debug\改扩建原型.pdb
+E:\RoadDesign\改扩建原型\obj\Debug\RoadExpensionDesign.csproj.AssemblyReference.cache
+E:\RoadDesign\改扩建原型\obj\Debug\RoadExpensionDesign.csproj.SuggestedBindingRedirects.cache
