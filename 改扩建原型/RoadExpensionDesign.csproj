@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4065CBC-1BF5-48CA-9435-E3380D280416}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RoadExpensionDesign</RootNamespace>
+    <AssemblyName>改扩建原型</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mainFrm\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\1项目\Frm_NewProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\1项目\Frm_NewProject.Designer.cs">
+      <DependentUpon>Frm_NewProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\1项目\Frm_ProjectInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\1项目\Frm_ProjectInfo.Designer.cs">
+      <DependentUpon>Frm_ProjectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\1项目\Frm_UserSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\1项目\Frm_UserSetting.Designer.cs">
+      <DependentUpon>Frm_UserSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\3数据\Frm_CustomRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\3数据\Frm_CustomRange.Designer.cs">
+      <DependentUpon>Frm_CustomRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\4组件模板\Frm_Material.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\4组件模板\Frm_Material.Designer.cs">
+      <DependentUpon>Frm_Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\4组件模板\Frm_CrosStruct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\4组件模板\Frm_CrosStruct.Designer.cs">
+      <DependentUpon>Frm_CrosStruct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\4组件模板\Frm_PaveStruct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\4组件模板\Frm_PaveStruct.Designer.cs">
+      <DependentUpon>Frm_PaveStruct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\4组件模板\Frm_RoadStruct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\4组件模板\Frm_RoadStruct.Designer.cs">
+      <DependentUpon>Frm_RoadStruct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_CalPaveRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_CalPaveRange.Designer.cs">
+      <DependentUpon>Frm_CalPaveRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_PaveRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_PaveRange.Designer.cs">
+      <DependentUpon>Frm_PaveRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_PersonalizedSetSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_PersonalizedSetSelect.Designer.cs">
+      <DependentUpon>Frm_PersonalizedSetSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_ModifySection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_ModifySection.Designer.cs">
+      <DependentUpon>Frm_ModifySection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_MinConstructionWidth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_MinConstructionWidth.Designer.cs">
+      <DependentUpon>Frm_MinConstructionWidth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_VerRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_VerRule.Designer.cs">
+      <DependentUpon>Frm_VerRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_PaveMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_PaveMethod.Designer.cs">
+      <DependentUpon>Frm_PaveMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_HorRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_HorRule.Designer.cs">
+      <DependentUpon>Frm_HorRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_WideningEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_WideningEdit.Designer.cs">
+      <DependentUpon>Frm_WideningEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_CalHorSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_CalHorSection.Designer.cs">
+      <DependentUpon>Frm_CalHorSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_VerSecDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5平纵横设计\Frm_VerSecDesign.Designer.cs">
+      <DependentUpon>Frm_VerSecDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5横断面设计\Frm_CreateSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5横断面设计\Frm_CreateSec.Designer.cs">
+      <DependentUpon>Frm_CreateSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5横断面设计\Frm_CrossSecModels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5横断面设计\Frm_CrossSecModels.Designer.cs">
+      <DependentUpon>Frm_CrossSecModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrm\menus\5横断面设计\Frm_DecisionPts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrm\menus\5横断面设计\Frm_DecisionPts.Designer.cs">
+      <DependentUpon>Frm_DecisionPts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="mainFrm\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\1项目\Frm_NewProject.resx">
+      <DependentUpon>Frm_NewProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\1项目\Frm_ProjectInfo.resx">
+      <DependentUpon>Frm_ProjectInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\1项目\Frm_UserSetting.resx">
+      <DependentUpon>Frm_UserSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\3数据\Frm_CustomRange.resx">
+      <DependentUpon>Frm_CustomRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\4组件模板\Frm_Material.resx">
+      <DependentUpon>Frm_Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\4组件模板\Frm_CrosStruct.resx">
+      <DependentUpon>Frm_CrosStruct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\4组件模板\Frm_PaveStruct.resx">
+      <DependentUpon>Frm_PaveStruct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\4组件模板\Frm_RoadStruct.resx">
+      <DependentUpon>Frm_RoadStruct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_CalPaveRange.resx">
+      <DependentUpon>Frm_CalPaveRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_MinConstructionWidth.resx">
+      <DependentUpon>Frm_MinConstructionWidth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_PaveRange.resx">
+      <DependentUpon>Frm_PaveRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_ModifySection.resx">
+      <DependentUpon>Frm_ModifySection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_VerRule.resx">
+      <DependentUpon>Frm_VerRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_PaveMethod.resx">
+      <DependentUpon>Frm_PaveMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_HorRule.resx">
+      <DependentUpon>Frm_HorRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_WideningEdit.resx">
+      <DependentUpon>Frm_WideningEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_CalHorSection.resx">
+      <DependentUpon>Frm_CalHorSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5平纵横设计\Frm_VerSecDesign.resx">
+      <DependentUpon>Frm_VerSecDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5横断面设计\Frm_CreateSec.resx">
+      <DependentUpon>Frm_CreateSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5横断面设计\Frm_CrossSecModels.resx">
+      <DependentUpon>Frm_CrossSecModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrm\menus\5横断面设计\Frm_DecisionPts.resx">
+      <DependentUpon>Frm_DecisionPts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="mainFrm\menus\2路线管理\" />
+    <Folder Include="mainFrm\menus\6三维模型\" />
+    <Folder Include="mainFrm\menus\7成果输出\" />
+    <Folder Include="mainFrm\menus\8帮助\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
